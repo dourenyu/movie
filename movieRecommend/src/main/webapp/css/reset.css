@@ -41,7 +41,7 @@ ul,ol{list-style:none;}
 h1, h2, h3, h4, h5, h6{ font-size:100%; font-weight: normal; font-family:"Helvetica Neue",Helvetica,"Hiragino Sans GB",Microsoft YaHei,Arial,sans-serif;}
 img{border: none;}
 /** {box-sizing: border-box; }*/
-body *{max-height:1000%;}
+/*body *{max-height:1000%;}*/
 input,select,option,button{font-family:"Helvetica Neue",Helvetica,"Hiragino Sans GB",Microsoft YaHei,Arial,sans-serif;}
 @media screen and (max-width:319px){
 	html{

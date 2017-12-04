@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,6 +17,25 @@
 		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript">
+			function loginAction(){
+				$.ajax({
+					type:"post",
+					url:'${pageContext.request.getContextPath()}/user/toLogin',
+					data:$("#login_form").serialize(),
+					success:function(result){
+						if(result.message == 'error'){
+							alert("账号或密码错误！");
+						}else{
+							alert("登录成功！");
+							window.location.href="${pageContext.request.getContextPath()}/toSkip/index";
+						}				
+					}
+				})
+			}
+		</script>
 	</head>
 	
 	<body>
@@ -30,21 +51,21 @@
 		   </div>
 			<div class="fr formCon">
 		        <div class="signup-form">
-		        	<form action="" method="post" class="form form--stack">
+		        	<form action="" method="post" class="form form--stack" id="login_form">
 				        <span class="login-type">账号登录</span>
 				        <div class="form-field form-field--icon">
 				            <i class="icon iconfont icon-user"></i>
-				            <input type="text" id="login-email" class="f-text" name="email" placeholder="手机号/用户名/邮箱" value="">
+				            <input type="text" id="uAccount" class="f-text" name="uAccount" placeholder="手机号/用户名/邮箱" value="">
 				        </div>
 				        <div class="form-field form-field--icon">
 				            <i class="icon iconfont icon-password"></i>
-				            <input type="password" id="login-password" class="f-text" name="password" placeholder="密码">
+				            <input type="password" id="uPassWord" class="f-text" name="uPassWord" placeholder="密码">
 				        </div>
 				        <div class="form-field cf lostKey signup-guide">
 				        	<div class="fr"><a href="javascript:;" target="_top">忘记密码？</a></div>
 				        </div>
 				        <div class="form-field">
-				        	<input type="button" name="" value="登录" class="btn btnLog" />
+				        	<input type="button" name="" value="登录" class="btn btnLog" onclick="javascript:loginAction();" />
 				        </div>
 		                <div class="signup-guide">还没有账号？<a href="reg.html" target="_top">免费注册</a></div>
 				    </form>

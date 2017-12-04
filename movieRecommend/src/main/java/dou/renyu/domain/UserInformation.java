@@ -7,6 +7,12 @@ public class UserInformation {
 	private String uId;
 	private String telePhone;
 	
+	private String uiPicture;
+	private String uiName;
+	private String uiSex;
+	private String uibrithdate;
+	private String uiLike;
+	
 	public String getUiId() {
 		return uiId;
 	}
@@ -25,5 +31,37 @@ public class UserInformation {
 	public void setTelePhone(String telePhone) {
 		this.telePhone = telePhone;
 	}
+	public String getUiPicture() {
+		return uiPicture;
+	}
+	public void setUiPicture(String uiPicture) {
+		this.uiPicture = uiPicture;
+	}
+	public String getUiName() {
+		return uiName;
+	}
+	public void setUiName(String uiName) {
+		this.uiName = uiName;
+	}
+	public String getUiSex() {
+		return uiSex;
+	}
+	public void setUiSex(String uiSex) {
+		this.uiSex = uiSex;
+	}
+	public String getUibrithdate() {
+		return uibrithdate;
+	}
+	public void setUibrithdate(String uibrithdate) {
+		this.uibrithdate = uibrithdate;
+	}
+	public String getUiLike() {
+		return uiLike;
+	}
+	public void setUiLike(String uiLike) {
+		this.uiLike = uiLike;
+	}
+	
+	
 	
 }

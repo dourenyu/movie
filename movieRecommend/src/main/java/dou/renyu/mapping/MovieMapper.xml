@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dou.renyu.dao.MovieDao">
+	<resultMap type = "Movie" id = "GoodsResultMap">
+	 <id property = "mid" column = "mid"/>
+	 <result property = "mname" column = "mname" />
+	 <result property = "mcontent" column = "mcontent" />
+	 <result property = "mview" column = "mview" />
+	 <result property = "mgrade" column = "mgrade" />
+	 <result property = "mprice" column = "mprice" />
+	</resultMap>
+ 
+    <select id="selectMovie" parameterType="Movie" resultMap="GoodsResultMap">
+        select * from movie m where 1 = 1 
+    </select>
+    
+    
+    <insert id ="insertMovie" parameterType="Movie">
+    	insert into movie(mid,mname,mcontent,mview,mgrade,mprice) values(#{mid},#{mname},#{mcontent},#{mview},#{mgrade},#{mprice})
+    </insert>
+</mapper>
