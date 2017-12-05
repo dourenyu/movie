@@ -1,0 +1,210 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!-- iOS 设备 begin -->
+		<meta name="apple-mobile-web-app-title" content="标题">
+		<!-- 添加到主屏后的标题（iOS 6 新增） -->
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta content="no" name="apple-touch-fullscreen">
+		<meta content="yes" name="full-screen">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=yes,email=yes" name="format-detection">
+		<meta content="address=no" name="format-detection">
+		<title>我的订单</title>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+	</head>
+	
+	<body>
+		<div class="headerBox">
+		  <div class="header-inner">
+		        <a href="javascript:;" class="logo" data-act="icon-click"></a>
+		        
+		        <div class="city-container">
+		        	<div class="city-selected">
+		        		<div class="city-name">上海<span class="caret"></span></div>
+		        	</div>
+		        </div>
+		        
+		        <div class="nav">
+		            <ul class="navbar">
+		                <li><a href="index.html">首页</a></li>
+		                <li><a href="movie.html">电影</a></li>
+		                <li><a href="cinemas.html">影院</a></li>
+		                <li><a href="listTop.html">榜单</a></li>
+		            </ul>
+		        </div>
+		
+		        <div class="userInfo">
+		            <div class="userAvatar">
+		              <img src="${pageContext.request.contextPath}/img/loginPic.png">
+		              <span class="caret"></span>
+		              <ul class="userMenu">
+		                <li class="text-ellipsis">
+		                  <a href="javascript:;">我的订单</a>
+		                </li>
+		                <li class="text-ellipsis"><a href="javascript:;">基本信息</a></li>
+		                <li class="text-ellipsis"><a href="javascript:;">退出登录</a></li>
+		              </ul>
+		            </div>
+		        </div>
+		
+		        <form class="searchForm">
+		            <input class="search" type="search" maxlength="32" placeholder="找影视剧、影人、影院" >
+		            <input class="submit" type="submit" value="">
+		        </form>
+		        
+		  </div>
+		</div>
+		<div class="header-placeholder"></div>
+		
+		<div class="container">
+			<div class="info-content clearfix">
+				<div class="user-profile-nav">
+			        <h1>个人中心</h1>
+			        <a href="javascript:;" class="active">我的订单</a>
+			        <a href="${pageContext.request.contextPath}/userInfo.jsp">基本信息</a>
+			    </div>
+			    <div class="orders-container">
+			    	<div class="profile-title">我的订单</div>
+			    	<div class="orderList">
+			    		<div class="order-box">
+			    			<div class="order-header">
+						        <span class="order-date">2017-10-22</span>
+						        <span class="order-id">猫眼订单号:1572302030</span>
+						        <span class="del-order fr"></span>
+						    </div>
+						    <div class="order-body">
+						    	<div class="poster">
+						        	<img src="http://p0.meituan.net/movie/385a6d22c2f1ed563aa58594d56cee39955568.jpg@66w_91h_1e_1c">
+						        </div>
+						        <div class="order-content">
+						        	<div class="movie-name">《天才枪手》</div>
+						        	<div class="cinema-name">川沙影剧院</div>
+						        	<div class="hall-ticket">
+							            <span>海华厅</span>
+							            <span>10排01座</span>
+							        </div>
+							        <div class="show-time">周日 10月22日 14:30</div>
+						        </div>
+						        <div class="order-price">&yen;23</div>
+						        <div class="order-status">已完成</div>
+						        <div class="actions">
+						            <a href="javascript:;" class="order-detail">查看详情</a>
+						        </div>
+						    </div>
+			    		</div>
+			    		<div class="order-box">
+			    			<div class="order-header">
+						        <span class="order-date">2017-10-22</span>
+						        <span class="order-id">猫眼订单号:1572302030</span>
+						        <span class="del-order fr"></span>
+						    </div>
+						    <div class="order-body">
+						    	<div class="poster">
+						        	<img src="http://p0.meituan.net/movie/385a6d22c2f1ed563aa58594d56cee39955568.jpg@66w_91h_1e_1c">
+						        </div>
+						        <div class="order-content">
+						        	<div class="movie-name">《天才枪手》</div>
+						        	<div class="cinema-name">川沙影剧院</div>
+						        	<div class="hall-ticket">
+							            <span>海华厅</span>
+							            <span>10排01座</span>
+							        </div>
+							        <div class="show-time">周日 10月22日 14:30</div>
+						        </div>
+						        <div class="order-price">&yen;23</div>
+						        <div class="order-status">已完成</div>
+						        <div class="actions">
+						            <a href="javascript:;" class="order-detail">查看详情</a>
+						        </div>
+						    </div>
+			    		</div>
+			    		<div class="order-box">
+			    			<div class="order-header">
+						        <span class="order-date">2017-10-22</span>
+						        <span class="order-id">猫眼订单号:1572302030</span>
+						        <span class="del-order fr"></span>
+						    </div>
+						    <div class="order-body">
+						    	<div class="poster">
+						        	<img src="http://p0.meituan.net/movie/385a6d22c2f1ed563aa58594d56cee39955568.jpg@66w_91h_1e_1c">
+						        </div>
+						        <div class="order-content">
+						        	<div class="movie-name">《天才枪手》</div>
+						        	<div class="cinema-name">川沙影剧院</div>
+						        	<div class="hall-ticket">
+							            <span>海华厅</span>
+							            <span>10排01座</span>
+							        </div>
+							        <div class="show-time">周日 10月22日 14:30</div>
+						        </div>
+						        <div class="order-price">&yen;23</div>
+						        <div class="order-status">已完成</div>
+						        <div class="actions">
+						            <a href="javascript:;" class="order-detail">查看详情</a>
+						        </div>
+						    </div>
+			    		</div>
+			    		<div class="order-box">
+			    			<div class="order-header">
+						        <span class="order-date">2017-10-22</span>
+						        <span class="order-id">猫眼订单号:1572302030</span>
+						        <span class="del-order fr"></span>
+						    </div>
+						    <div class="order-body">
+						    	<div class="poster">
+						        	<img src="http://p0.meituan.net/movie/385a6d22c2f1ed563aa58594d56cee39955568.jpg@66w_91h_1e_1c">
+						        </div>
+						        <div class="order-content">
+						        	<div class="movie-name">《天才枪手》</div>
+						        	<div class="cinema-name">川沙影剧院</div>
+						        	<div class="hall-ticket">
+							            <span>海华厅</span>
+							            <span>10排01座</span>
+							        </div>
+							        <div class="show-time">周日 10月22日 14:30</div>
+						        </div>
+						        <div class="order-price">&yen;23</div>
+						        <div class="order-status">已完成</div>
+						        <div class="actions">
+						            <a href="javascript:;" class="order-detail">查看详情</a>
+						        </div>
+						    </div>
+			    		</div>
+			    	</div>
+			    </div>  
+			</div>
+		</div>
+		
+		<footer>
+		    <p class="copyright">
+		        ©<a class="f1" href="javascript:;">meituan.com</a>&nbsp;
+		        <a class="f1" target="_blank" href="javascript:;">京ICP证070791号</a>&nbsp;
+		        <span class="f1">京公网安备11010502025545号</span>
+		    </p>
+		</footer>
+	
+		<script>
+			// 轮播图
+			var swiper = new Swiper('.swiper-container', {
+	        	pagination: '.swiper-pagination',
+	        	slidesPerView: 1,	
+	       		slidesPerGroup : 1,
+				loop: true,
+	       		paginationClickable: true,
+				autoplay: 4000,
+				prevButton: '.arrow-left',
+        		nextButton: '.arrow-right',
+	   		});
+
+		</script>
+	
+	</body>
+</html>

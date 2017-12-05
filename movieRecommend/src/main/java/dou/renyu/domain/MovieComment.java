@@ -2,11 +2,11 @@ package dou.renyu.domain;
 
 public class MovieComment {
 
-	private String mcid;
-	private String mid;
-	private String uid;
-	private String mccontent;
-	private String mctime;
+	private String mcid;//评论id
+	private String mid;//电影id
+	private String uid;//用户id
+	private String mccontent;//评论内容
+	private String mctime;//评论时间
 
 	public String getMcid() {
 		return mcid;
