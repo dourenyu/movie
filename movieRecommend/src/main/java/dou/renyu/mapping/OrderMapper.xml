@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="dou.renyu.dao.OrderDao">
+<resultMap id="orderMap" type="Order">
+	 <id property = "oid" column = "oid"/>
+	 <result property = "mid" column = "mid" />
+	 <result property = "uid" column = "uid" />
+	 <result property = "otime" column = "otime" />
+</resultMap>
+<insert id="addOrder" parameterType="Order">
+	insert into morder(oid,mid,uid,otime) values(#{oid},#{mid},#{uid},#{otime})
+</insert>
+
+<select id="selectOrder" resultMap="orderMap">
+	select * from morder where uid =#{uid}
+</select>
+
+</mapper>
