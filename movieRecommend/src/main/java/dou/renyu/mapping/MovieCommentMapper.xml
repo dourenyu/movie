@@ -2,7 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dou.renyu.dao.MovieCommentDao">
+	<resultMap type = "MovieComment" id = "movieCommentMap">
+		 <id property = "mcid" column = "mcid"/>
+		 <result property = "mid" column = "mid" />
+		 <result property = "uid" column = "uid" />
+		 <result property = "mccontent" column = "mccontent" />
+		 <result property = "mctime" column = "mctime" />
+	</resultMap>
   	<insert id="addComment" parameterType="MovieComment">
   		insert into movieComment(mcid,mid,uid,mccontent,mctime) values(#{mcid},#{mid},#{uid},#{mccontent},#{mctime})
   	</insert>
+  	
+  	<select id="selectComment" resultMap="movieCommentMap" parameterType="String">
+  		select * from moviecomment where mid =#{mid}
+  	</select>
 </mapper>

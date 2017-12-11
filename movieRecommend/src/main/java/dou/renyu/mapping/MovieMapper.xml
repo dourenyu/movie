@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dou.renyu.dao.MovieDao">
-	<resultMap type = "Movie" id = "GoodsResultMap">
+	<resultMap type = "Movie" id = "MovieResultMap">
 	 <id property = "mid" column = "mid"/>
 	 <result property = "mname" column = "mname" />
 	 <result property = "mcontent" column = "mcontent" />
@@ -11,7 +11,7 @@
 	 <result property = "mprice" column = "mprice" />
 	</resultMap>
  
-    <select id="selectMovie" parameterType="Movie" resultMap="GoodsResultMap">
+    <select id="selectMovie" parameterType="Movie" resultMap="MovieResultMap">
         select * from movie m where 1 = 1 
     </select>
     
@@ -19,4 +19,16 @@
     <insert id ="insertMovie" parameterType="Movie">
     	insert into movie(mid,mname,mcontent,mview,mgrade,mprice) values(#{mid},#{mname},#{mcontent},#{mview},#{mgrade},#{mprice})
     </insert>
+    
+    <select id="selectMovieByMid" resultType="Movie" parameterType="String">
+    	select * from movie where mid =#{mid}
+    </select>
+    
+    
+    <select id="selectMovieForLike"  resultMap="MovieResultMap" parameterType="String">
+    	select * from movie where mname like '%mname%'
+    	<!--  <isNotNull property="mname">
+    		And mname like '%#{mname}%'
+    	</isNotNull>   -->
+    </select>
 </mapper>

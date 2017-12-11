@@ -20,4 +20,18 @@ public interface MovieDao {
 	 * @return
 	 */
 	public int insertMovie(Movie movie);
+	
+	/**
+	 * 通过电影id查询详情
+	 * @param mid
+	 * @return
+	 */
+	public Movie selectMovieByMid(String mid);
+	
+	/**
+	 * 根据电影名进行模糊查询
+	 * @param likeName
+	 * @return
+	 */
+	public List<Movie> selectMovieForLike(String likeName);
 }

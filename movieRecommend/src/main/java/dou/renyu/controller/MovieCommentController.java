@@ -2,8 +2,10 @@ package dou.renyu.controller;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -49,5 +51,12 @@ public class MovieCommentController {
 			map.put("message", "false");
 		}
 		return map;
+	}
+	
+	//根据电影id查询评论集合
+	public List<MovieComment> queryMovieComment(String mid){
+		List<MovieComment> list = new ArrayList<MovieComment>();
+		list = movieCommentDao.selectComment(mid);
+		return list;
 	}
 }

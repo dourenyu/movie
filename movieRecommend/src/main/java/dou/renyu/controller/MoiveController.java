@@ -2,6 +2,7 @@ package dou.renyu.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import dou.renyu.dao.MovieDao;
 import dou.renyu.dao.MoviePictureDao;
 import dou.renyu.domain.Movie;
+import dou.renyu.domain.MovieComment;
 import dou.renyu.domain.MoviePicture;
 
 @Controller
@@ -30,6 +32,11 @@ public class MoiveController {
 	@Resource
 	private MoviePictureDao moviePictureDao;
 	 
+	/**
+	 * 查詢所有電影
+	 * @param session
+	 * @return
+	 */
 	@RequestMapping("/list")
 	public String selectMooiveList(HttpSession session){
 		Movie movie = new Movie();
@@ -82,4 +89,38 @@ public class MoiveController {
 		}
 		return map;
 	}
+	
+	/**
+	 * 查詢電影明顯
+	 * @param request
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping("/minfo")
+	public String queryMovieInfo(HttpServletRequest request,HttpSession session){
+		String mid = request.getParameter("mid");
+		Movie movie = movieDao.selectMovieByMid(mid);
+		MoviePicture moviePicture = moviePictureDao.selectMoviePictureByMid(mid);
+		MovieCommentController movieCommentController = new MovieCommentController();
+		List<MovieComment> list = new ArrayList<MovieComment>();
+		list = movieCommentController.queryMovieComment(mid);
+		session.setAttribute("movie", movie);
+		session.setAttribute("moviePicture", moviePicture);
+		session.setAttribute("movieCommentList", list);
+		return "";
+	}
+	
+	/**
+	 * 根据电影名称进行模糊查询
+	 * @param request
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping("/qlike")
+	public String queryMovieForLike(HttpServletRequest request,HttpSession session){
+		String mname = request.getParameter("likeName");
+		List<Movie> ltMovie =  movieDao.selectMovieForLike(mname);
+		return "";
+	}
+	
 }
