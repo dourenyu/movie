@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dou.renyu.dao.MovieScoreDao">
+<resultMap id="MsMap" type="MovieScore">
+	 <id property = "msid" column = "msid"/>
+	 <result property = "mid" column = "mid" />
+	 <result property = "uid" column = "uid" />
+	 <result property = "mscore" column = "mscore" />
+</resultMap>
+<insert id="addMscore" parameterType="MovieScore">
+	insert into moviescore(msid,uid,mid,mscore) values(#{msid},#{uid},#{mid},#{mscore})
+</insert>
+
+<select id="selectMS" parameterType="String">
+	select * from moviescore where mid =#{mid}
+</select>
+</mapper>

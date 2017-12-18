@@ -5,4 +5,8 @@
     <select id="selectUserByAccAndPwd" parameterType="User" resultType="User">
         select * from user where uaccount =#{uAccount} and upassword =#{uPassWord}
     </select>
+    
+    <insert id="addUser" parameterType="User">
+    	insert into user(uid,uaccount,upassword) values(#{uId},#{uAccount},#{uPassWord})
+    </insert>
 </mapper>

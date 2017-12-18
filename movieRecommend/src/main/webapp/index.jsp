@@ -48,7 +48,7 @@
 		              <img src="${pageContext.request.contextPath}/img/loginPic.png">
 		              <span class="caret"></span>
 		              <ul class="userMenu">
-		                <li><a href="javascript:void 0">登录</a></li>
+		                <li><a href="${pageContext.request.contextPath}/login.jsp">登录</a></li>
 		              </ul>
 		            </div>
 		        </div>

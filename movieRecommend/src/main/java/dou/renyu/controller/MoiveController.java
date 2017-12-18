@@ -60,6 +60,7 @@ public class MoiveController {
 		movie.setMname(mv_name);
 		movie.setMcontent(mv_details);
 		movie.setMprice(Double.parseDouble(mv_price));
+		movie.setMgrade(Double.parseDouble(mv_grade));
 		
 		int isAddmovie = movieDao.insertMovie(movie);
 		

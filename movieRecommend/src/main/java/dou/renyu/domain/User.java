@@ -25,5 +25,13 @@ public class User {
 		this.uPassWord = uPassWord;
 	}
 	
+	public User(String uId, String uAccount, String uPassWord) {
+		super();
+		this.uId = uId;
+		this.uAccount = uAccount;
+		this.uPassWord = uPassWord;
+	}
+	
+	
 	
 }

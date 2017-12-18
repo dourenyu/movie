@@ -5,4 +5,9 @@
     <insert id="insertUserInfo" parameterType="UserInformation">
         insert into userInformation(uiId,uId,telePhone) value(#{uiId},#{uId},#{telePhone})
     </insert>
+    
+    <update id="updateUserInfo" parameterType="UserInformation">
+    	update userInformation set uiPicture=#{uiPicture},uiname=#{uiName},uisex=#{uiSex},uibrithday=#{uibrithdate},uilike=#{uiLike} where uid=#{uId}
+    </update>
+    
 </mapper>

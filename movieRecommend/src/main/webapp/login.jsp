@@ -14,9 +14,9 @@
 		<meta content="telephone=yes,email=yes" name="format-detection">
 		<meta content="address=no" name="format-detection">
 		<title>登录</title>
-		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
-		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/font/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
 		
 		<script src="js/jquery-1.10.1.min.js"></script>
 		<script type="text/javascript">
